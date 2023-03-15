@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const args = process.argv.splice(2);
-const C = 'c is fun';
+const C = 'C is fun';
 const x = Number(args[0]);
 
 if (!x) {
