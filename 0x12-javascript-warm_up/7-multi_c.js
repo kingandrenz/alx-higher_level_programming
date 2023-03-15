@@ -2,12 +2,12 @@
 
 const args = process.argv.splice(2);
 const C = 'c is fun';
-const num = Number(args[0]);
+const x = Number(args[0]);
 
-if (!num) {
+if (!x) {
   console.log('Missing number of occurrences');
 } else {
-  for (let i = 0; i < num; i++) {
+  for (let i = 0; i < x; i++) {
     console.log(C);
   }
 }
