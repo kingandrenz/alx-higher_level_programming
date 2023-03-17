@@ -10,4 +10,4 @@ Square.prototype.charPrint = function (c) {
   }
 };
 
-module.exports = {Square};
+module.exports = { Square };

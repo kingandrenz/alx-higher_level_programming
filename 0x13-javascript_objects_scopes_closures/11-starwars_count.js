@@ -9,10 +9,10 @@ request(url, (err, res, body) => {
   }
 
   let count = 0;
-  let parsedBody = JSON.parse(body).results;
+  const parsedBody = JSON.parse(body).results;
 
   for (let i = 0; i < parsedBody.length; i++) {
-    let a = parsedBody[i].characters.find((c) => {
+    const a = parsedBody[i].characters.find((c) => {
       return c.match(/18/);
     });
     if (a !== undefined) {
