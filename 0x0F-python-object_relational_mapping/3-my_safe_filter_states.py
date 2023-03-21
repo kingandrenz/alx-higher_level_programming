@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # List all states where 'name' matches the argument
+# But this time, one safe from MySQL injection.
 # Username, password, database name, and state name given as user args
 import sys
 import MySQLdb
@@ -13,14 +14,13 @@ if __name__ == "__main__":
     cur = db.cursor()
     cmd = """SELECT id, name
          FROM states
-         WHERE name='{}'
-         ORDER BY id ASC""".format(sys.argv[4])
-    cur.execute(cmd)
+         WHERE name=%s
+         ORDER BY id ASC"""
+    cur.execute(cmd, (sys.argv[4],))
     nStates = cur.fetchall()
 
     for state in nStates:
-        if (state[1] == sys.argv[4]):
-            print(state)
+        print(state)
 
     cur.close()
     db.close()
